@@ -5,14 +5,7 @@ const { DataTypes } = Sequelize;
 const url =
   process.env.DATABASE_URL ||
   "postgres://postgres:postgres@localhost:5432/review_app";
-export const sequelize = new Sequelize(url, {
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
-});
+export const sequelize = new Sequelize(url);
 
 export const User = sequelize.define(
   "user",
